@@ -30,7 +30,7 @@ class Login extends React.Component {
 
     handleSubmit(event) {
         if (this.state.userName.length > 6 && this.state.password.length > 6) {
-            var apiBaseUrl = "http://localhost:5000/users";
+            var apiBaseUrl = "https://unhportal2.herokuapp.com/users";
             var self = this;
             var payload = {
                 "userName": this.state.userName,

@@ -30,7 +30,7 @@ class CourseSchedule extends React.Component {
   }
 
 componentDidMount() {
-    var apiBaseUrl = "http://localhost:5000/enrollCourses/"+localStorage.getItem("userId");
+    var apiBaseUrl = "https://unhportal2.herokuapp.com/enrollCourses/"+localStorage.getItem("userId");
     var self = this;
     axios.get(apiBaseUrl).then(function (response) {
                

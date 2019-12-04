@@ -33,7 +33,7 @@ class AddDropCourses extends Component {
     this.setState({courses:stats, term:tm,year:yr}, () => {
       
     });
- let courseUrl = "http://localhost:5000/enrollCourses/view/"+this.state.term+"/"+this.state.year+"/"+localStorage.getItem("userId");
+ let courseUrl = "https://unhportal2.herokuapp.com/enrollCourses/view/"+this.state.term+"/"+this.state.year+"/"+localStorage.getItem("userId");
 console.log(this.state.courses)
           axios.get(courseUrl).then(function (response) {
          let  uniqueCRN=new Set();
@@ -133,7 +133,7 @@ class GSRequest extends React.Component {
 
 
 
-        let gradurl = "http://localhost:5000/courses/CSC/"+this.state.term+"/"+this.state.year;
+        let gradurl = "https://unhportal2.herokuapp.com/courses/CSC/"+this.state.term+"/"+this.state.year;
           console.log(gradurl);
          $.ajax({
           url: gradurl,
@@ -168,7 +168,7 @@ class GSRequest extends React.Component {
           </td>
           <td><div style={{width: 200 + 'px'}} >
                 <YearPicker 
-                  url="http://localhost:5000/courses/years"
+                  url="https://unhportal2.herokuapp.com/courses/years"
                   callbackParent={this.onInputChange}
                   pollInterval={200000} />
               </div>
@@ -193,7 +193,7 @@ class GSResult extends React.Component {
    }
    saveList(values,val) {
        console.log(values, val)
-       let apiBaseUrl = "http://localhost:5000/enrollCourses/add";
+       let apiBaseUrl = "https://unhportal2.herokuapp.com/enrollCourses/add";
        let self = this;
        let professorMap=JSON.parse(localStorage.getItem("professorMap"));
        console.log(professorMap)

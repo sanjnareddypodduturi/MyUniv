@@ -46,7 +46,7 @@ class GSRequest extends React.Component {
       x["department"] = val;
     this.setState(x, () => {
       if ((this.state.department !== "")) {
-        var gradurl = "http://localhost:5000/users/"+this.state.department;
+        var gradurl = "https://unhportal2.herokuapp.com/users/"+this.state.department;
          $.ajax({
           url: gradurl,
           dataType: 'json',
@@ -72,7 +72,7 @@ class GSRequest extends React.Component {
         <tr>
           <td><div style={{width: 200 + 'px'}} >
                 <DepartmentPicker 
-                   url="http://localhost:5000/courses/departments"
+                   url="https://unhportal2.herokuapp.com/courses/departments"
                    callbackParent={this.onInputChange}
                    pollInterval={200000} />
               </div>

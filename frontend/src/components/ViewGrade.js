@@ -8,7 +8,7 @@ export default function calulateGrade(userID) {
 let courseList=[]
  let grade={"A":4.0,"B":3.7,"C":3.4,"D":3.0}
     let gpa=0.0
- let url = "http://localhost:5000/enrollCourses/"+localStorage.getItem("userId")
+ let url = "https://unhportal2.herokuapp.com/enrollCourses/"+localStorage.getItem("userId")
           console.log(url);
         axios.get(url).then(function (response) {
             courseList=response.data

@@ -26,7 +26,7 @@ class FacultyLogin extends React.Component {
 
   handleSubmit(event) {
     if (this.state.userName.length > 6 && this.state.password.length > 6) {
-      var apiBaseUrl = "http://localhost:5000/professor";
+      var apiBaseUrl = "https://unhportal2.herokuapp.com/professor";
       var self = this;
       var payload = {
         "professorUserName": this.state.userName,

@@ -20,7 +20,7 @@ class StudentDashboard extends React.Component {
              localStorage.setItem("redirect",false)
              console.log("stay");
 
-             var userurl = "http://localhost:5000/users/user/"+localStorage.getItem("userName");
+             var userurl = "https://unhportal2.herokuapp.com/users/user/"+localStorage.getItem("userName");
              console.log(userurl);
          $.ajax({
           url: userurl,
@@ -30,7 +30,7 @@ class StudentDashboard extends React.Component {
               console.log(jsondata)
               localStorage.setItem("userId",jsondata[0]["userId"])
               localStorage.setItem("department",jsondata[0]["department"])
-        var userurl = "http://localhost:5000/courses/department/"+jsondata[0]["department"];
+        var userurl = "https://unhportal2.herokuapp.com/courses/department/"+jsondata[0]["department"];
         console.log(userurl)
          $.ajax({
           url: userurl,

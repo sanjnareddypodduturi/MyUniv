@@ -63,7 +63,7 @@ class GSRequest extends React.Component {
       x["year"] = val;
     this.setState(x, () => {
       if ((this.state.department !== "") && (this.state.term !== "") && (this.state.year !== "")) {
-        var gradurl = "http://localhost:5000/enrollCourses/grade/"+localStorage.getItem("professorUserName")+"/"+this.state.department+"/"+this.state.term+"/"+this.state.year;
+        var gradurl = "https://unhportal2.herokuapp.com/enrollCourses/grade/"+localStorage.getItem("professorUserName")+"/"+this.state.department+"/"+this.state.term+"/"+this.state.year;
     console.log(gradurl)
          $.ajax({
           url: gradurl,
@@ -92,7 +92,7 @@ class GSRequest extends React.Component {
         <tr>
           <td><div style={{width: 200 + 'px'}} >
                 <DepartmentPicker 
-                   url="http://localhost:5000/courses/departments"
+                   url="https://unhportal2.herokuapp.com/courses/departments"
                    callbackParent={this.onInputChange}
                    pollInterval={200000} />
               </div>
@@ -104,7 +104,7 @@ class GSRequest extends React.Component {
           </td>
           <td><div style={{width: 200 + 'px'}} >
                 <YearPicker 
-                  url="http://localhost:5000/courses/years"
+                  url="https://unhportal2.herokuapp.com/courses/years"
                   callbackParent={this.onInputChange}
                   pollInterval={200000} />
               </div>
@@ -136,7 +136,7 @@ class GSResult extends React.Component {
              let courseGrade=grades[key]
              for(let g in courseGrade)
              {
-                 let apiBaseUrl = "http://localhost:5000/enrollCourses/updategrade/"+username+"/"+g;
+                 let apiBaseUrl = "https://unhportal2.herokuapp.com/enrollCourses/updategrade/"+username+"/"+g;
       let payload={
           "grade":courseGrade[g]
       }

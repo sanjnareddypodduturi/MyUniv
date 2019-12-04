@@ -87,7 +87,7 @@ class GSRequest extends React.Component {
     this.setState(x, () => {
       if ((this.state.term !== "") && (this.state.year !== "")) {
           
-        var gradurl = "http://localhost:5000/enrollCourses/view/"+this.state.term+"/"+this.state.year+"/"+this.props.sid;
+        var gradurl = "https://unhportal2.herokuapp.com/enrollCourses/view/"+this.state.term+"/"+this.state.year+"/"+this.props.sid;
           console.log(gradurl);
          $.ajax({
           url: gradurl,
@@ -122,7 +122,7 @@ class GSRequest extends React.Component {
           </td>
           <td><div style={{width: 200 + 'px'}} >
                 <YearPicker 
-                  url="http://localhost:5000/courses/years"
+                  url="https://unhportal2.herokuapp.com/courses/years"
                   callbackParent={this.onInputChange}
                   pollInterval={200000} />
               </div>
@@ -146,7 +146,7 @@ class GSResult extends React.Component {
    }
    saveList(values,val){
        
-    var apiBaseUrl = "http://localhost:5000/enrollCourses";
+    var apiBaseUrl = "https://unhportal2.herokuapp.com/enrollCourses";
     var self = this;
        
 
