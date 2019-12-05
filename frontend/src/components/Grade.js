@@ -145,12 +145,16 @@ class GSResult extends React.Component {
    })
    .catch(function (error) {
      console.log(error);
+     alert("Grade Not Updated")
     });
              }
          }
 
-//alert("Grade Updated")
-     //    window.location="/facultyDashboard"
+         setTimeout(window.alert("Grade Updated"),100);
+       
+         
+      //alert("Grade Updated")
+      
   }
 
    updateInputValue(values,val) {
@@ -206,7 +210,7 @@ console.log(grades);
 
         {
             Header: 'UserName',
-            accessor: 'userName',width:150
+            accessor: 'userName',width:150          
                 },
         {
             Header: 'Department',
