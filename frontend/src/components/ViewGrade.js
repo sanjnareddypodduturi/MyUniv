@@ -12,12 +12,12 @@ let courseList=[]
           console.log(url);
         axios.get(url).then(function (response) {
             courseList=response.data
-    console.log(courseList.length)
+    console.log(courseList)
             let count=0
-     for (let i=0;i<=courseList.length;i++)
+     for (let i=0;i<courseList.length;i++)
        {
         console.log(courseList[i]["grade"])
-           if(courseList[i]["grade"]!="I")
+           if(courseList[i]["grade"]!=="I")
            {
             
             gpa+=grade[courseList[i]["grade"]]
@@ -27,10 +27,9 @@ let courseList=[]
        }
        console.log(gpa,count)
 
-       gpa = gpa/count
-       
+       gpa = (gpa/count)
        console.log(gpa)
-       localStorage.setItem("grade",gpa)
+       localStorage.setItem("grade",gpa.toFixed(2))
     })
     .catch(function (error) {
       console.log(error);
