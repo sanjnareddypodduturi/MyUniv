@@ -151,9 +151,7 @@ class GSResult extends React.Component {
          }
 
          setTimeout(window.alert("Grade Updated"),100);
-       
          
-      //alert("Grade Updated")
       
   }
 
