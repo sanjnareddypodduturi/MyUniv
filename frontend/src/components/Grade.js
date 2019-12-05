@@ -149,8 +149,8 @@ class GSResult extends React.Component {
              }
          }
 
-alert("Grade Updated")
-         window.location="/facultyDashboard"
+//alert("Grade Updated")
+     //    window.location="/facultyDashboard"
   }
 
    updateInputValue(values,val) {

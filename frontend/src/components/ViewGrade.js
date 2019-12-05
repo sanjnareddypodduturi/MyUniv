@@ -12,14 +12,16 @@ let courseList=[]
           console.log(url);
         axios.get(url).then(function (response) {
             courseList=response.data
-    console.log(courseList)
+    console.log(courseList.length)
             let count=0
-     for (let i=0;i<courseList.length;courseList++)
+     for (let i=0;i<=courseList.length;i++)
        {
-           if(courseList[i]["grade"]!=="I")
+        console.log(courseList[i]["grade"])
+           if(courseList[i]["grade"]!="I")
            {
+            
             gpa+=grade[courseList[i]["grade"]]
-               
+             
            }
            count+=1
        }
